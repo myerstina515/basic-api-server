@@ -18,7 +18,7 @@ function getClothes(req, res){
 }
 
 function getOneArticle(req, res){
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   const oneArticle = clothes.get(id);
   res.status(200).json(oneArticle);
 }
@@ -30,13 +30,15 @@ function createArticle(req, res){
 }
 
 function updateArticle(req, res){
-//   const updated = ;
-//   const postArticle = clothes.post(updated);
-//   res.status(200).json(postArticle);
+  const obj = req.body;
+  const updatedArticle = clothes.update(req.params.id, obj);
+  res.status(200).json(updatedArticle);
 }
 
 function deleteArticle(req, res){
-  res.status(200).send('delete article of clothing');
+  const id = req.params.id;
+  const deletedClothes = clothes.delete(id);
+  res.status(200).json(deletedClothes);
 }
 
 module.exports = router;

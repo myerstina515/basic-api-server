@@ -18,7 +18,7 @@ function getFoods(req, res){
 }
 
 function getOneFood(req, res){
-  const id = req.params.id;
+  const id = parseInt(req.params.id);
   const oneFood = foods.get(id);
   res.status(200).json(oneFood);
 }
@@ -31,15 +31,15 @@ function createFood(req, res){
 
 function updateFood(req, res){
   const obj = req.body;
-  console.log(req.body);
-  const updatedFood = foods.update(obj);
+  //   console.log(req.body); 
+  const updatedFood = foods.update(req.params.id, obj);
   res.status(200).json(updatedFood);
 }
 
 function deleteFood(req, res){
-
-
-  res.status(200).send('deleting banana');
+  const id = req.params.id;
+  const deletedFood = foods.delete(id);
+  res.status(200).json(deletedFood);
 }
 
 

@@ -1,6 +1,7 @@
 class ClothesModel {
   constructor(){
     this.id = 0;
+    this.name;
     this.db = [];
   }
 
@@ -20,16 +21,23 @@ class ClothesModel {
 
   update(id, obj){
     if(!id) {return null;}
-
+    else{
+      const i = this.db.findIndex(record => record.id === parseInt(id));
+      this.db[i].name = obj.name;
+      return this.db[i];
+    }
     //TODO: figure out how to update an object
-    return obj;
   }
 
   delete(id){
     if(!id) {return null;}
-
+    else {
+      const i = this.db.findIndex(record => record.id);
+      this.db.find(record => record.id === parseInt(id));
+      this.db.splice(i, 1);
+      return this.db;
+    }
     //TODO: figure out how to delete an object
-    return null;
   }
 }
 
