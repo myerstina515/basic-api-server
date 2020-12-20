@@ -9,7 +9,7 @@
 
 - Resources: Simon Panek, Stacy Burris, Nathan Rhead Cox, Mariko Alvarado
 
-[heroku](Not deployed yet)
+[heroku](https://tinamyers-basic-api-server.herokuapp.com/clothes)
 
 <!-- - [ci/cd](http://xyz.com) (GitHub Actions)
 - [back-end server url](http://xyz.com) (when applicable)
@@ -40,10 +40,10 @@ i.e.
 
 #### Tests
 
-- N/A
-- How do you run tests?
-- Any tests of note?
-- Describe any tests that you did not complete, skipped, etc
+
+- How do you run tests? npm test
+- Any tests of note? all tests completed for "/clothes" route
+- Describe any tests that you did not complete, skipped, etc: N/A
 
 #### UML
 
